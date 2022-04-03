@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { getRestaurant } from "../App"
+import { getUnique } from "../App"
 
-export default function Restaurant() {
+export default function Unique() {
     let params = useParams();
-    let data2 = getRestaurant(parseInt(params.data2Id,10));
+    let data2 = getUnique(parseInt(params.data2Id,10));
     return (
       <main style={{ padding: "1rem" }}>
         <h2>{data2.Name}</h2>

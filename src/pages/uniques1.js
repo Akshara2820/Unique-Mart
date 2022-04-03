@@ -1,8 +1,8 @@
 import { NavLink, Outlet} from "react-router-dom"
-import {getRestaurants} from "../App";
+import { getUniques1} from "../App";
 
-function Restaurants() {
-  let data = getRestaurants();
+function uniques1() {
+  let data = getUniques1();
   return (
     <div>
 
@@ -21,4 +21,4 @@ function Restaurants() {
 }
 
 
-export default Restaurants;
+export default uniques1;

@@ -80,12 +80,12 @@ function App () {
   
 }
 
-export function getRestaurants() {
+export function getUniques1() {
   return data;
   }
   
   
-  export function getRestaurant(id) {
+  export function getUnique(id) {
   return data.find(
     (data2) => data2.id === id
   );

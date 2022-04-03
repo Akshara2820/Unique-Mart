@@ -6,8 +6,8 @@ import {
 }from "react-router-dom";
 import './index.css';
 import App from "./App";
-import Restaurants from "./pages/restaurants";
-import Restaurant from "./pages/restaurant";
+import Uniques1 from "./pages/uniques1";
+import Unique from "./pages/unique";
 
 
 
@@ -16,7 +16,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route exact path ="/" element={<App />} >
-      <Route path ="/data" element={<Restaurants />}>
+      <Route path ="/data" element={<Uniques1 />}>
         <Route
           index
           element={
@@ -25,7 +25,7 @@ render(
             </main>
           }
         />
-        <Route path=":data2Id" element={<Restaurant />} />
+        <Route path=":data2Id" element={<Unique />} />
       </Route>
       <Route
         path="*"
