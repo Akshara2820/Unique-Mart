@@ -5,7 +5,7 @@ import {Link, Outlet} from "react-router-dom";
 
 
 
-const data =[
+const restaurants =[
   {
     Name: "Samsung Charger",
     Price: "600Rs",
@@ -60,11 +60,11 @@ function App () {
                   <th>Price</th>
                   <th>Category</th>
                 </tr>
-                {data.map((val, key) => {
+                {restaurants.map((val, key) => {
                   return (
                     <tr key={key}>
                       
-                      <td><Link to ="/unique" key={data.id}>{val.Name} </Link> </td>
+                      <td><Link to ="/restaurent" key={restaurants.id}>{val.Name} </Link> </td>
                       <td>{val.Price}</td>                  
                       <td>{val.Category}</td>
                     </tr>
@@ -79,15 +79,15 @@ function App () {
   
 }
 
-
-export function getAllData(){
-  return data;
-}
-
-export function getData(id) {
-  return data.find(
-    (unique) => unique.id ===id
+export function getRestaurants() {
+  return restaurants;
+  }
+  
+  
+  export function getRestaurant(id) {
+  return restaurants.find(
+    (restaurant) => restaurant.id === id
   );
-}
-
+  }
+  
 export default App;

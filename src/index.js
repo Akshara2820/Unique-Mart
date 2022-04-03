@@ -1,41 +1,42 @@
-import React from 'react';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { render } from '@testing-library/react';
+import {render} from "react-dom";
 import {
-    BrowserRouter,
-    Routes,
-    Route,
-  } from "react-router-dom";
+  BrowserRouter,
+  Routes,
+  Route,
+}from "react-router-dom";
+import './index.css';
+import App from "./App";
+import Restaurants from "./pages/restaurants";
+import Restaurant from "./pages/restaurant";
 
-import Data from "./pages/data"
-import AllData from './pages/alldata';
 
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />}/>
-            <Route path="/AllData" element={<AllData/>}/>
-            
-            <Route path=":uniqueId" element={<Data/>}/>
-            <Route
-                    path="*"
-                    element={
-                        <main style={{ padding: "1rem" }}>
-                        <p>There's nothing here!</p>
-                        </main>
-                    }
-                />
-
-        </Routes>
-    </BrowserRouter>,
-    rootElement
+  <BrowserRouter>
+    <Routes>
+      <Route exact path ="/" element={<App />} >
+      <Route path ="/Restaurants" element={<Restaurants />}>
+        <Route
+          index
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>Select an restaurant</p>
+            </main>
+          }
+        />
+        <Route path=":restaurantId" element={<Restaurant />} />
+      </Route>
+      <Route
+        path="*"
+        element={
+          <main style={{ padding: "1rem" }}>
+           <p>There's nothing here!</p>
+          </main>
+        }
+      />
+      </Route>
+    </Routes>
+  </BrowserRouter>,
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
