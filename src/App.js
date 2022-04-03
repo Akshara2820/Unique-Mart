@@ -1,7 +1,9 @@
 import './App.css';
 import React,{Component} from 'react';
 import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
-import {NavLink, Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
+
+
 
 const data =[
   {
@@ -32,7 +34,7 @@ const data =[
   },
 
   {
-    Name:"Shree",
+    Name:"Saree",
     Price:"2099Rs",
     Category:"Women's Wear",
     id:4,
@@ -61,15 +63,8 @@ function App () {
                 {data.map((val, key) => {
                   return (
                     <tr key={key}>
-                      <td>  
-                      <NavLink 
-                        to ={`/id`}
-                        key={data.id}
-                        >
-                        {val.Name}
-                          
-                      </NavLink> </td>
                       
+                      <td><Link to ="/unique" key={data.id}>{val.Name} </Link> </td>
                       <td>{val.Price}</td>                  
                       <td>{val.Category}</td>
                     </tr>
@@ -85,5 +80,14 @@ function App () {
 }
 
 
-export default App;
+export function getAllData(){
+  return data;
+}
 
+export function getData(id) {
+  return data.find(
+    (unique) => unique.id ===id
+  );
+}
+
+export default App;

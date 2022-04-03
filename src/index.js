@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +9,8 @@ import {
     Route,
   } from "react-router-dom";
 
-
+import Data from "./pages/data"
+import AllData from './pages/alldata';
 
 
 const rootElement = document.getElementById('root');
@@ -18,6 +18,9 @@ render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}/>
+            <Route path="/AllData" element={<AllData/>}/>
+            
+            <Route path=":uniqueId" element={<Data/>}/>
             <Route
                     path="*"
                     element={
@@ -28,8 +31,9 @@ render(
                 />
 
         </Routes>
-    </BrowserRouter>
-)
+    </BrowserRouter>,
+    rootElement
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
