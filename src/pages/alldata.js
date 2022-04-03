@@ -18,7 +18,7 @@ function AllData(){
           to={`/unique/${unique.id}`}
           key = {unique.id}
          >
-          {unique.Hotel}           
+          {unique.Name}           
          </NavLink>
       ))}
     </nav>
