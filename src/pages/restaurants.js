@@ -2,25 +2,19 @@ import { NavLink, Outlet} from "react-router-dom"
 import {getRestaurants} from "../App";
 
 function Restaurants() {
-  let restaurants = getRestaurants();
+  let data = getRestaurants();
   return (
-    <div style={{ display: "flex" }}>
-    <nav
-      style={{
-        borderRight: "solid 1px",
-        padding: "1rem",
-      }}
-    >
-      {restaurants.map((restaurant) => (
+    <div>
+
+      {data.map((data2) => (
         <NavLink 
           style={{ display: "block", margin: "1rem 0" }}
-          to={`/restaurants/${restaurant.id}`}
-          key = {restaurant.id}
+          to={`/data/${data2.id}`}
+          key = {data2.id}
          >
-          {restaurant.Hotel}           
+          {data2.Hotel}           
          </NavLink>
       ))}
-    </nav>
     <Outlet />
      </div>
   )

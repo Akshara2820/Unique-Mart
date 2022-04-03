@@ -16,16 +16,16 @@ render(
   <BrowserRouter>
     <Routes>
       <Route exact path ="/" element={<App />} >
-      <Route path ="/Restaurants" element={<Restaurants />}>
+      <Route path ="/data" element={<Restaurants />}>
         <Route
           index
           element={
             <main style={{ padding: "1rem" }}>
-              <p>Select an restaurant</p>
+              <p>Select any Id</p>
             </main>
           }
         />
-        <Route path=":restaurantId" element={<Restaurant />} />
+        <Route path=":data2Id" element={<Restaurant />} />
       </Route>
       <Route
         path="*"
