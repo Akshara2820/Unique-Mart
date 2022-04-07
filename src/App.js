@@ -55,8 +55,6 @@ function App () {
             <table>
               <thead>
                 <tr>
-
-                  <th>Id</th>
                   <th>Name</th>
                   <th>Price</th>
                   <th>Category</th>
@@ -64,7 +62,6 @@ function App () {
                 {data.map((val, key) => {
                   return (
                     <tr key={key}>
-                      <td>{val.id}</td>  
                       <td><Link to ={`/data/${val.id}`} key={data.id}>{val.Name} </Link> </td>
                       <td>{val.Price}</td>                  
                       <td>{val.Category}</td>

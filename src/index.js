@@ -17,14 +17,6 @@ render(
     <Routes>
       <Route exact path ="/" element={<App />} >
       <Route path ="/data" element={<Uniques1 />}>
-        <Route
-          index
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>Select any Id</p>
-            </main>
-          }
-        />
         <Route path=":data2Id" element={<Unique />} />
       </Route>
       <Route

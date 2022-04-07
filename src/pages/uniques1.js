@@ -8,11 +8,9 @@ function uniques1() {
 
       {data.map((data2) => (
         <NavLink 
-          style={{ display: "block", margin: "1rem 0" }}
-          to={`/data/${data2.id}`}
+          to={`/data/${data2.id}`} 
           key = {data2.id}
-         >
-          {data2.Hotel}           
+         >          
          </NavLink>
       ))}
     <Outlet />
