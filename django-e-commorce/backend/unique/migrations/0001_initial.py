@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=120)),
                 ('description', models.TextField()),
                 ('category', models.BooleanField(default=False)),
+                ('price',models.BooleanField(default=False)),
             ],
         ),
     ]
