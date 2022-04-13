@@ -4,43 +4,7 @@ import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
 import {Link, Outlet} from "react-router-dom";
 import axios from "axios";
 
-const data=[
-  {
-    name: "Samsung Charger",
-    price: "600Rs",
-    category: "Electronic",
-    id:1,
-    description:"Model Number: Original EP-TA20IWECGIN Type C",
-    number:11
-  },
 
-  {
-    name: "Samsung Earphone",
-    price: "1250Rs",
-    category: "Electronic",
-    id:2,
-    description:"With Mic:Yes, Connector type: 3.5 mm",
-    number: 12
-  },
-
-  {
-    name: "T-Shirt",
-    price:"877Rs",
-    category: "Men's Were",
-    id:3,
-    description:"Size M   XL are only available",
-    number:13,
-  },
-
-  {
-    name:"Saree",
-    price:"2099Rs",
-    category:"Women's Wear",
-    id:4,
-    description:"Solid Fashion Lycra Blend Saree  (Magenta)",
-    number:14
-  }
-]
 
 class App extends Component {
   constructor (props){
@@ -68,8 +32,8 @@ class App extends Component {
         .get("/api/")
         .then((res) => {
             console.log("response", res)
-            const data =res.data;
-            this.setState({data})
+            const data = res.data;
+            this.setState({data: data})
         })
         .catch((err) => {
           console.log(err)
@@ -92,10 +56,10 @@ class App extends Component {
           <th>Price</th>
           <th>Category</th>
         </tr>
-        {data.map((val, key) => {
+        {this.state.data.map((val, key) => {
           return (
             <tr key={key}>
-              <td><Link to ={`/data/${val.id}`} key={data.id}>{val.name} </Link> </td>
+              <td><Link to ={`/data/${val.id}`} key={val.id}>{val.name} </Link> </td>
               <td>{val.price}</td>                  
               <td>{val.category}</td>
             </tr>
@@ -151,12 +115,12 @@ class App extends Component {
 // }
 
 export function getUniques1() {
-  return data;
+  return [];
   }
   
   
   export function getUnique(id) {
-  return data.find(
+  return [].find(
     (data2) => data2.id === id
   );
   }
