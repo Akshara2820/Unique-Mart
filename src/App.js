@@ -40,6 +40,21 @@ class App extends Component {
         });
   }
 
+
+  details_list =()=>{
+    axios
+    .get("/data")
+    .then ((res)=>{
+      console.log("responce",res)
+      const data_id = res.data
+      this.setState({data:data_id})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  
   render (){
     return (
       <>

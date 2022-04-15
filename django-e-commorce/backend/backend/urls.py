@@ -26,7 +26,7 @@ from unique import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', views.UniqueView.as_view()),
-    # path('post/<int:pk>/', views.details_unique, name="Details_unique")
+    path('data/<int:pk>/', views.Details.as_view(), name="Details_unique")
     
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)
