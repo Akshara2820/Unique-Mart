@@ -24,3 +24,12 @@ class Details(APIView):
         serializer = UniqueSerializer(data)
         return Response(serializer.data)
 
+
+
+class Category(APIView):
+    def get (self, request):
+        category = Unique.models.filter()
+        serializer = UniqueSerializer(category, many=True)
+        return Response(serializer.data)
+
+        
