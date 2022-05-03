@@ -27,9 +27,8 @@ class Details(APIView):
 
 
 class Category(APIView):
-    def get (self, request):
-        category = Unique.models.filter()
+    def get (self, request, poll_id):
+        category = Unique.objects.filter(category=poll_id)
         serializer = UniqueSerializer(category, many=True)
         return Response(serializer.data)
 
-        

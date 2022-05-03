@@ -8,6 +8,7 @@ import './index.css';
 import App from "./App";
 import Uniques1 from "./pages/uniques1";
 import Unique from "./pages/unique";
+import Category from "./pages/category";
 
 
 
@@ -18,6 +19,9 @@ render(
       <Route exact path ="/" element={<App />} >
       <Route path ="/data" element={<Uniques1 />}>
         <Route path=":data2Id" element={<Unique />} />
+      </Route>
+      <Route path ="/category" element={<Uniques1 />}>
+        <Route path=":category2Id" element={<Unique />} />
       </Route>
       <Route
         path="*"
@@ -32,3 +36,9 @@ render(
   </BrowserRouter>,
   rootElement
 );
+
+
+
+
+
+

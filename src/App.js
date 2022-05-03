@@ -54,7 +54,20 @@ class App extends Component {
     })
   }
 
-  
+  details_category =()=>{
+    axios
+    .get("/category")
+    .then ((res) =>{
+      console.log("responce",res)
+      const category_data =res.data
+      this.setState({data:category_data})
+    })
+    .catch((err) =>{
+      console.log(err)
+    })
+
+  }
+
   render (){
     return (
       <>
